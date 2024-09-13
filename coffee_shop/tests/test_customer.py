@@ -1,7 +1,7 @@
 import pytest
-from coffee_shop.customer import Customer
-from coffee_shop.coffee import Coffee
-from coffee_shop.order import Order
+from customer import Customer
+from coffee import Coffee
+from order import Order
 
 
 
@@ -31,8 +31,8 @@ def test_orders():
     orders = customer.orders()
     
     assert len(customer.orders()) == 2
-    assert orders[0].coffee1 == coffee1
-    assert orders[1].coffee2 == coffee2
+    assert orders[0].coffee == coffee1
+    assert orders[1].coffee == coffee2
     
 def test_coffees():
     customer = Customer("Brian")
