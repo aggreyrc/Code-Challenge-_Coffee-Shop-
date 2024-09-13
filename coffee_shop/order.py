@@ -1,6 +1,3 @@
-from customer import Customer
-from coffee import Coffee
-
 
 class Order:
     
@@ -8,6 +5,8 @@ class Order:
     def __init__(self,customer,coffee,price):
         
         #Validating class instances and attributes
+        from customer import Customer
+        from coffee import Coffee
         if isinstance(customer,Customer) and isinstance(coffee,Coffee):
             self._customer = customer
             self._coffee = coffee
@@ -31,3 +30,5 @@ class Order:
     @property
     def coffee(self):
         return self._coffee
+    
+    

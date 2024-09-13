@@ -1,4 +1,4 @@
-from order import Order
+
 
 class Coffee:
     def __init__(self, name):
@@ -10,6 +10,7 @@ class Coffee:
         
     #Returning a list of all orders for this coffee
     def orders(self):
+        from order import Order
         return [order for order in Order.all_orders if order.coffee == self]
     
     #Returning a unique list of Customer instances who have ordered that coffee
@@ -21,7 +22,8 @@ class Coffee:
         return len(self.orders())
     
     # Average price of this coffee based on its orders
-    def avg_price(self):
+    def average_price(self):
         total_price = sum(order.price for order in self.orders())
         return total_price / len(self.orders()) if len(self.orders()) > 0 else 0.0
+        
         
